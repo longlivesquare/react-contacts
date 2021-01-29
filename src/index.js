@@ -3,10 +3,11 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import ContactForm from './components/ContactForm';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <ContactForm />
   </React.StrictMode>,
   document.getElementById('root')
 );
