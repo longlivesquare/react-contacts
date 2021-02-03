@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import './ContactForm.css';
+import '../css/ContactForm.css';
 
 const ContactForm = (props) => {
     const [picSrc, setPictureSource] = useState('default-image.png');

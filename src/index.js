@@ -7,7 +7,7 @@ import ContactForm from './components/ContactForm';
 
 ReactDOM.render(
   <React.StrictMode>
-    <ContactForm />
+    <App />
   </React.StrictMode>,
   document.getElementById('root')
 );
