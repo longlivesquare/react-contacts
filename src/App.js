@@ -1,23 +1,20 @@
 import { useState } from 'react';
 import './App.css';
+import ContactForm from './components/ContactForm';
 import ContactList from './components/ContactList';
 
-function App() {
-  const [contacts, setContacts] = useState([{
-    firstName: "Jane",
-    lastName: "Doe",
-    phoneNumber: "(559)555-5501",
-    profileImg: "./logo192.png"
-  },
-  {
-    firstName: "James",
-    lastName: "Smith",
-    phoneNumber: "(559)555-5521",
-    profileImg: "./logo192.png"
+const App = () => {
+  const [contacts, setContacts] = useState([]);
+
+  const addContact = (contact) => {
+    setContacts([...contacts, contact])
   }
-  ]);
+
   return (
     <div>
+      <ContactForm 
+        onSubmit={addContact}
+      />
       <ContactList 
         contacts={contacts}
       />

@@ -4,9 +4,7 @@ const ContactItem = ({firstName, lastName, phoneNumber, profileImg}) => {
 
     return (
         <div className='contactItem'>
-            <div className='contactItemPicture'>
-                <img src={profileImg} alt='Profile'/>
-            </div>
+            <img src={profileImg} alt='Profile' className='contactItemPicture'/>
             <div className='contactItemInfo'>
                 <p>{firstName+" "+lastName}</p>
                 <p>{phoneNumber}</p>

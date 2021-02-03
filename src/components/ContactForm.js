@@ -29,16 +29,37 @@ const ContactForm = (props) => {
       input.click();
     }
 
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        props.onSubmit({
+            firstName,
+            lastName,
+            phoneNumber,
+            email,
+            address,
+            profileImg: picSrc
+        });
+        clearInputs();
+    }
+
+    const clearInputs = () => {
+        setFirstName('');
+        setLastName('');
+        setPhoneNumber('');
+        setEmail('');
+        setAddress('');
+        setPictureSource('default-image.png');
+    }
+
     return (
-        <>
-            <div id="picture">
-                <img 
-                    src={picSrc} 
-                    alt="Default" 
-                    onClick={handleImageUpload}
-                    />
-            </div>
-            <div id="form">
+        <div className="ContactFormPage">
+            <img
+                className='ProfilePicture' 
+                src={picSrc} 
+                alt="Default" 
+                onClick={handleImageUpload}
+            />
+            <form className="ContactForm" onSubmit={handleSubmit}>
                 <input 
                     type='text'
                     placeholder='First Name'
@@ -69,8 +90,9 @@ const ContactForm = (props) => {
                     value={address}
                     onChange={e => setAddress(e.target.value)}
                 />
-            </div>
-        </>
+                <input type='submit' />
+            </form>
+        </div>
     )
 }
 

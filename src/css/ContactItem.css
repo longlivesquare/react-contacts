@@ -8,6 +8,9 @@
     border-bottom-right-radius: 15px;
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
+    justify-content: space-between;
+    justify-items: left;
+    align-items:center;
 }
 
 .contactItemPicture {
@@ -15,5 +18,5 @@
 }
 
 .contactItemInfo {
-    float: right;
+    justify-self: start;
 }

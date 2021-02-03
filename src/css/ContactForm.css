@@ -1,8 +1,14 @@
-#form {
+.ContactFormPage {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.ContactForm {
     display: flex;
     flex-direction: column;
 }
 
-img {
-    width: 80%;
+.ProfilePicture {
+    width: 20%;
 }
