@@ -1,6 +1,8 @@
 import ContactItem from "./ContactItem";
+import { useContacts } from "../hooks";
 
-const ContactList = ({contacts}) => {
+const ContactList = () => {
+    const { contacts } = useContacts();
 
     return (
         <div>

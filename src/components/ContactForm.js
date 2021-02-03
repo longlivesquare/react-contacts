@@ -1,5 +1,7 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
+import ContactContext from '../contexts/contactContext';
 import '../css/ContactForm.css';
+import { useContacts } from '../hooks';
 
 const ContactForm = (props) => {
     const [picSrc, setPictureSource] = useState('default-image.png');
@@ -29,9 +31,11 @@ const ContactForm = (props) => {
       input.click();
     }
 
+    const { addContact } = useContacts();
+
     const handleSubmit = (event) => {
         event.preventDefault();
-        props.onSubmit({
+        addContact({
             firstName,
             lastName,
             phoneNumber,

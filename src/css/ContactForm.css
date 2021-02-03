@@ -11,4 +11,5 @@
 
 .ProfilePicture {
     width: 20%;
+    cursor: pointer;
 }
