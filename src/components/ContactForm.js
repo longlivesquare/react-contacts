@@ -1,5 +1,4 @@
-import { useContext, useState } from 'react';
-import ContactContext from '../contexts/contactContext';
+import { useState } from 'react';
 import '../css/ContactForm.css';
 import { useContacts } from '../hooks';
 

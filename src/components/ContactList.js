@@ -2,7 +2,7 @@ import ContactItem from "./ContactItem";
 import { useContacts } from "../hooks";
 
 const ContactList = () => {
-    const { contacts } = useContacts();
+    const { contacts, removeContact } = useContacts();
 
     return (
         <div>
@@ -14,6 +14,7 @@ const ContactList = () => {
                         firstName={contactData.firstName}
                         lastName={contactData.lastName}
                         profileImg={contactData.profileImg}
+                        deleteContact={() => removeContact(index)}
                     />
                 )
             }
