@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { useHistory } from "react-router-dom";
 import AuthContext from "../contexts/AuthContext";
 
 const authy = {
@@ -8,14 +9,16 @@ const authy = {
 
 const AuthProvider = ({ children }) => {
     const [user, setUser] = useState(null);
+    const { push } = useHistory();
 
     useEffect(() => {
         if(user === null ) {
             console.log("User not set");
         } else {
             console.log(user + " logged in");
+            push('/contacts');
         }
-    },[user]);
+    },[user, push]);
 
     const Login = (username, password) => {
         if (username === authy.username && password === authy.password) {

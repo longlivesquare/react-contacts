@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useHistory } from 'react-router-dom';
 import '../css/ContactForm.css';
 import { useContacts } from '../hooks';
 
@@ -9,6 +10,7 @@ const ContactForm = (props) => {
     const [phoneNumber, setPhoneNumber] = useState('');
     const [email, setEmail] = useState('');
     const [address, setAddress] = useState('');
+    const history = useHistory();
 
     const handleImageUpload = () => {
         console.log("clicked.");
@@ -43,6 +45,7 @@ const ContactForm = (props) => {
             profileImg: picSrc
         });
         clearInputs();
+        history.push('/contacts');
     }
 
     const clearInputs = () => {

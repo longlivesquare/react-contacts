@@ -1,3 +1,4 @@
+import { BrowserRouter, Route } from 'react-router-dom';
 import './App.css';
 import ContactForm from './components/ContactForm';
 import ContactList from './components/ContactList';
@@ -9,13 +10,15 @@ const App = () => {
   
   return (
    <div>
-     <AuthProvider>
-       <ContactProvider>
-         <LoginForm />
-         <ContactForm />
-         <ContactList />
-       </ContactProvider>
-     </AuthProvider>
+     <BrowserRouter>
+      <AuthProvider>
+        <ContactProvider>
+          <Route path='/login'><LoginForm /></Route>
+          <Route path='/newContact'><ContactForm /></Route>
+          <Route path='/contacts'><ContactList /></Route>
+        </ContactProvider>
+      </AuthProvider>
+     </BrowserRouter>
    </div> 
   );
 }
