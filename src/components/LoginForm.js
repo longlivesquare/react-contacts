@@ -9,7 +9,7 @@ const LoginForm = ({props}) => {
 
     const handleLogin = (event) => {
         event.preventDefault();
-        Login(username, password)
+        Login(username, password);
     }
 
     const handleLogout = (event) => {
