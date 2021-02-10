@@ -14,10 +14,10 @@ const App = () => {
       <AuthProvider>
         <ContactProvider>
           <Switch>
-            <Route path='/login'><LoginForm /></Route>
-            <Route path='/contacts/add'><ContactForm /></Route>
+            <Route path='/login' component={LoginForm}></Route>
+            <Route path='/contacts/add' component={ContactForm}></Route>
             <Route path='/contacts/:index' component={ContactDetails} />
-            <Route path='/' exact><ContactList /></Route>
+            <Route path='/' component={ContactList} exact></Route>
             
           </Switch>
         </ContactProvider>

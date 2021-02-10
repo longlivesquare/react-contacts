@@ -4,7 +4,7 @@ import { useHistory } from "react-router-dom";
 import { useEffect } from "react";
 
 const ContactList = () => {
-    const { contacts, removeContact } = useContacts();
+    const { contacts } = useContacts();
     const { user } = useAuth();
     const { push } = useHistory();
 
@@ -29,8 +29,7 @@ const ContactList = () => {
                         firstName={contactData.firstName}
                         lastName={contactData.lastName}
                         profileImg={contactData.profileImg}
-                        deleteContact={() => removeContact(index)}
-                        detailsLink={`/contacts/${index}`}
+                        handleClick={() => push(`/contacts/${index}`)}
                     />
                 )
             }

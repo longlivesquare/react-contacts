@@ -28,7 +28,7 @@ const ContactDetails = () => {
     </div>)
 
     useEffect(() => {
-        if(contacts && index) {
+        if(contacts.length > 0 && index) {
             const contact = contacts[index];
             setFirstName(contact.firstName);
             setLastName(contact.lastName);
@@ -42,7 +42,7 @@ const ContactDetails = () => {
     return (
         <div>
             <button onClick={() => history.goBack()}>Go Back</button>
-            {index && contacts ? html : <div>Nothing</div>}
+            {index && contacts.length > 0 ? html : <div>Nothing</div>}
             
             
         </div>

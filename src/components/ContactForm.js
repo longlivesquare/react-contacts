@@ -4,7 +4,7 @@ import '../css/ContactForm.css';
 import { useContacts } from '../hooks';
 
 const ContactForm = (props) => {
-    const [picSrc, setPictureSource] = useState('../default-image.png');
+    const [picSrc, setPictureSource] = useState(`${process.env.PUBLIC_URL}/default-image.png`);
     const [firstName, setFirstName] = useState('');
     const [lastName, setLastName] = useState('');
     const [phoneNumber, setPhoneNumber] = useState('');
