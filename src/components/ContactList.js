@@ -1,13 +1,21 @@
 import ContactItem from "./ContactItem";
-import { useContacts } from "../hooks";
+import { useAuth, useContacts } from "../hooks";
 import { useHistory } from "react-router-dom";
+import { useEffect } from "react";
 
 const ContactList = () => {
     const { contacts, removeContact } = useContacts();
-    const history = useHistory();
+    const { user } = useAuth();
+    const { push } = useHistory();
+
+    useEffect(() => {
+        if (!user){
+            push('/login')
+        }
+    }, [user, push])
 
     const handleButton = (e) => {
-        history.push('/contacts/add');
+        push('/contacts/add');
     }
 
     return (
