@@ -7,7 +7,7 @@ const ContactList = () => {
     const history = useHistory();
 
     const handleButton = (e) => {
-        history.push('/newContact');
+        history.push('/contacts/add');
     }
 
     return (
@@ -22,6 +22,7 @@ const ContactList = () => {
                         lastName={contactData.lastName}
                         profileImg={contactData.profileImg}
                         deleteContact={() => removeContact(index)}
+                        detailsLink={`/contacts/${index}`}
                     />
                 )
             }

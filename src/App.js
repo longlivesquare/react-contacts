@@ -1,5 +1,6 @@
-import { BrowserRouter, Route } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import './App.css';
+import ContactDetails from './components/ContactDetails';
 import ContactForm from './components/ContactForm';
 import ContactList from './components/ContactList';
 import LoginForm from './components/LoginForm';
@@ -10,15 +11,17 @@ const App = () => {
   
   return (
    <div>
-     <BrowserRouter>
       <AuthProvider>
         <ContactProvider>
-          <Route path='/login'><LoginForm /></Route>
-          <Route path='/newContact'><ContactForm /></Route>
-          <Route path='/contacts'><ContactList /></Route>
+          <Switch>
+            <Route path='/login'><LoginForm /></Route>
+            <Route path='/contacts/add'><ContactForm /></Route>
+            <Route path='/contacts/:index' component={ContactDetails} />
+            <Route path='/' exact><ContactList /></Route>
+            
+          </Switch>
         </ContactProvider>
       </AuthProvider>
-     </BrowserRouter>
    </div> 
   );
 }

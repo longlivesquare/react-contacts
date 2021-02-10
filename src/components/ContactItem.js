@@ -1,9 +1,12 @@
+import { Link } from 'react-router-dom';
 import '../css/ContactItem.css'
 
-const ContactItem = ({firstName, lastName, phoneNumber, profileImg, deleteContact}) => {
+const ContactItem = ({firstName, lastName, phoneNumber, profileImg, deleteContact, detailsLink}) => {
     return (
         <div className='contactItem'>
-            <img src={profileImg} alt='Profile' className='contactItemPicture'/>
+            <Link to={detailsLink}>
+                <img src={profileImg} alt='Profile' className='contactItemPicture'/>
+            </Link>
             <div className='contactItemInfo'>
                 <p>{firstName+" "+lastName}</p>
                 <p>{phoneNumber}</p>

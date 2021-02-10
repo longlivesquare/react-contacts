@@ -16,7 +16,7 @@ const AuthProvider = ({ children }) => {
             console.log("User not set");
         } else {
             console.log(user + " logged in");
-            push('/contacts');
+            push('/');
         }
     },[user, push]);
 

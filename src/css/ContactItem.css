@@ -13,8 +13,12 @@
     align-items:center;
 }
 
+a {
+    width: 33%;
+}
+
 .contactItemPicture {
-    width: 15%;
+    width: 75%;
     border-radius: 80%;
 }
 
